@@ -29,6 +29,7 @@ html, body { width:100%; height:100%; }
 }
 #menu a {
     color:white;
+    text-decoration: none;
 }
 
 .menu-in { animation: menuIn 0.3s forwards 0.1s; }

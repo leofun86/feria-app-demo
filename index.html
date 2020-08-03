@@ -22,25 +22,20 @@
         <a class="navbar-brand mt-2" id="icono-menu" href="#">
             <i class="fas fa-store-alt"></i>
         </a>
-          <!--
-              <a class="navbar-brand" id="search" href="#">
-            <i class="fas fa-search"></i>
-          </a>
-          -->
-          <form class="form-inline mt-3 mb-2 my-lg-0" style="display:inline-block;" action="tienda.html">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar producto...">
-                <span class="input-group-btn">
-                    <button class="btn btn-info" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-          </form>
+        <form class="form-inline mt-3 mb-2 my-lg-0" style="display:inline-block;">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar producto...">
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+        </form>
     </nav>
     <div class="container-fluid">
         <div id="menu">
-            <h4>Feria Tristán Narvaja</h4>
+            <h4><a href="index.html"><i class="fas fa-home"></i> Feria Tristán Narvaja</a></h4>
             <a href="#"><i class="fas fa-user"></i> LOGIN</a><br>
             <a href="#"><i class="fas fa-question"></i> Info</a><br>
             <a href="#"><i class="fas fa-landmark"></i> Wiki-Feria</a><br>
@@ -56,15 +51,15 @@
                 <i class="fas fa-paw"></i>
                 Plantas y animales
             </div>
-            <div class="col-5 mb-2 text-light" style="background:#621376;">
+            <div class="col-5 text-light" style="background:#621376;">
                 <i class="fas fa-apple-alt"></i>
                 Frutas y verduras
             </div>
-            <div class="col-5 mr-2 mb-2" id ="anticuarios" data-toggle="modal" data-target="#example-anticuario" style="background:#f0b500;">
+            <div class="col-5 mr-2 mb-2" id ="anticuarios" style="background:#f0b500;">
                 <i class="fas fa-ring"></i>
                 Anticuarios
             </div>
-            <div class="col-5 mr-2 mb-2" style="background:#50c4b8;">
+            <div class="col-5 mb-2" style="background:#50c4b8;">
                 <i class="fas fa-book"></i>
                 Libros y revistas
             </div>
@@ -72,18 +67,18 @@
                 <i class="fas fa-tshirt"></i>
                 Vestimenta
             </div>
-            <div class="col-5 mr-2 mb-2 text-light" style="background:#2d2d76;">
+            <div class="col-5 mb-2 text-light" style="background:#2d2d76;" data-toggle="modal" data-target="#example-mercado-pulgas">
                 <i class="fas fa-gifts"></i>
                 Mercado de pulgas
             </div>
         </div>
     </div>
     <div style="width:100%;height:100%;position:fixed;z-index:2222;">
-        <div class="modal fade" id="example-anticuario" tabindex="-1" role="dialog" aria-labelledby="example-anticuario" aria-hidden="true">
+        <div class="modal fade" id="example-mercado-pulgas" tabindex="-1" role="dialog" aria-labelledby="example-mercado-pulgas" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Antiuarios</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Mercado de pulgas</h5>
                   
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -92,7 +87,7 @@
                 <div class="modal-body">
                     <ul>
                         <li><a href="#">Joyas</a></li>
-                        <li><a href="tienda.html">Esculturas</a></li>
+                        <li><a href="tienda.html">Arte y artesanías</a></li>
                     </ul>
                 </div>
               </div>
