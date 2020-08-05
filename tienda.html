@@ -12,9 +12,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/3acfa00924.js" crossorigin="anonymous"></script>
+    <!-- LeafletJS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    <script type="text/javascript" src="js/Leaflet.Icon.Glyph.js"></script>
     <!-- Script App -->
     <script src="js/app.js" defer></script>
     <script src="js/tienda.js" defer></script>
+    <script src="js/mapa/API.js" defer></script>
+    <script src="js/mapa/UI.js" defer></script>
+    <script src="js/mapa/mapa-app.js" defer></script>
     <!-- Estilo App -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -46,16 +57,7 @@
         </div>
     </div>
     <div id="contenedor-total">
-        <div class="container-fluid">
-            <div id="menu">
-                <h4><a href="index.html">Feria Tristán Narvaja</a></h4>
-                <a href="#"><i class="fas fa-user"></i> LOGIN</a><br>
-                <a href="#"><i class="fas fa-question"></i> Info</a><br>
-                <a href="#"><i class="fas fa-landmark"></i> Wiki-Feria</a><br>
-                <a href="#"><i class="fas fa-bus-alt"></i> Paseo cultural Tristán Narvaja</a><br>
-                <a href="#"><i class="fas fa-cloud-download-alt"></i> Descargas</a>
-            </div>
-        </div>
+        <div class="container-fluid"><div id="menu"></div></div>
         <!-- CAROUSEL -->
         <div id="carouselExampleControls" class="carousel slide" id="carousel" data-ride="carousel">
             <div class="carousel-inner">
@@ -85,7 +87,13 @@
             </div>
         </div>
         <div class="container-fluid">
-            <img src="assets/mapa-img-2.jpg" class="img-fluid mt-3" id="mapa" style="display:none;" alt="Imagen de la feria de Tristán Narvaja">
+            <div id="contenedor-mapa" class="my-2" style="overflow:hidden;display:none;">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="mapa" style="transform:scale(1);height:200px!important;"></div>
+                    </div>
+                </div>
+            </div>
             <div class="row" id="info-puesto">
                 <div class="col-12">
                     <i class="fas fa-envelope"></i>
@@ -101,11 +109,11 @@
                 </div>
                 <div class="col-12">
                     <i class="fab fa-youtube"></i>
-                    yotuube.com/arte-sano
+                    yotube.com/arte-sano
                 </div>
                 <div class="col-12">
                     <i class="fas fa-map-marker-alt"></i>
-                    Paysandú 1732 frente al Habitab
+                    <span id="calle-puesto">Tristán Narvaja 1842</span> frente al Habitab
                 </div>
                 <div class="col-12">
                     <i class="far fa-credit-card"></i>

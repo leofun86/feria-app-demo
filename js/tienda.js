@@ -3,7 +3,7 @@ const descripcion = document.getElementById('descripcion');
 const btnInfo = document.getElementById('info');
 const infoPuesto = document.getElementById('info-puesto');
 const btnMapa = document.getElementById('btnMapa');
-const mapa = document.getElementById('mapa');
+const mapa = document.getElementById('contenedor-mapa');
 let boolInfo = false;
 let boolMapa = false;
 
