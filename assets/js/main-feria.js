@@ -18,6 +18,7 @@ function cargaMenu() {
     const txt = document.createElement('span');
     const a = document.createElement('a');
     const i = document.createElement('i');
+    caja_menu.setAttribute('style', 'padding-bottom:2vw;');
     nav.setAttribute('class', 'nav-menu d-none d-lg-block');
     h1.setAttribute('class', 'logo mr-auto');
     i.setAttribute('class', 'fas fa-store-alt');
@@ -192,10 +193,7 @@ function cargaCategorias() {
         const p = document.createElement('p');
         const link = document.createElement('a');
 
-        div1.classList.add('col-lg-3');
-        div1.classList.add('col-md-6');
-        div1.classList.add('col-sm-12');
-        div1.classList.add('caja_categoria');
+        div1.setAttribute('class', 'col-lg-3 col-md-6 col-sm-12 caja_categoria');
         
         img.setAttribute('src', cate.img);
         img.classList.add('img-fluid');
@@ -225,7 +223,8 @@ function cargaCategorias() {
     });
     const titulo = document.createElement('h1');
     titulo.textContent='Explorá los puestos';
-    titulo.setAttribute('class', 'col-12 text-center py-5 titulo_seccion');
+    titulo.setAttribute('class', 'col-12 text-center titulo_seccion');
+    titulo.setAttribute('style', 'padding-bottom:3vw;');
     index_categorias.appendChild(titulo);
     index_categorias.appendChild(fragment);
 }
