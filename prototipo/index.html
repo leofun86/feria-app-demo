@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria App v0.1</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="64x64">
+    <!-- Bootstrap & JQuery-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/3acfa00924.js" crossorigin="anonymous"></script>
+    <!-- Script App -->
+    <script src="js/app.js" defer></script>
+    <!-- Estilo App -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav id="nav-top" class="bg-info">
+        <a class="navbar-brand mt-2" id="icono-menu" href="#">
+            <i class="fas fa-store-alt"></i>
+        </a>
+        <form class="form-inline mt-3 mb-2 my-lg-0" style="display:inline-block;">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar producto...">
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+        </form>
+    </nav>
+    <div class="container-fluid"><div id="menu"></div></div>
+    <img src="assets/portada.jpg" class="img-fluid" alt="Imagen de la feria de Tristán Narvaja">
+    <h3 class="text-center my-2">Visitá los puestos</h3>
+    <div class="container-fluid">
+        <div class="row justify-content-center" id="categorias">
+            <div class="col-5 mr-2 mb-2" style="background:#58b300;">
+                <i class="fas fa-paw"></i>
+                Plantas y animales
+            </div>
+            <div class="col-5 text-light" style="background:#621376;">
+                <i class="fas fa-apple-alt"></i>
+                Frutas y verduras
+            </div>
+            <div class="col-5 mr-2 mb-2" id ="anticuarios" style="background:#f0b500;">
+                <i class="fas fa-ring"></i>
+                Anticuarios
+            </div>
+            <div class="col-5 mb-2" style="background:#50c4b8;">
+                <i class="fas fa-book"></i>
+                Libros y revistas
+            </div>
+            <div class="col-5 mr-2 mb-2" style="background:#eb9d00;">
+                <i class="fas fa-tshirt"></i>
+                Vestimenta
+            </div>
+            <div class="col-5 mb-2 text-light" style="background:#2d2d76;" data-toggle="modal" data-target="#example-mercado-pulgas">
+                <i class="fas fa-gifts"></i>
+                Mercado de pulgas
+            </div>
+        </div>
+    </div>
+    <div style="width:100%;height:100%;position:fixed;z-index:2222;">
+        <div class="modal fade" id="example-mercado-pulgas" tabindex="-1" role="dialog" aria-labelledby="example-mercado-pulgas" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mercado de pulgas</h5>
+                  
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><a href="#">Joyas</a></li>
+                        <li><a href="tienda.html">Arte y artesanías</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <h3 class="text-center my-2">Explorá la feria</h3>
+    <img src="assets/mapa-img.jpg" class="img-fluid mt-3" id="mapa" alt="Imagen de la feria de Tristán Narvaja">
+    <footer id="pie" class="bg-info text-light text-center py-2">
+        Feria Tristán Narvaja © 2020
+    </footer>
+</body>
+</html>
