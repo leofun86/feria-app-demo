@@ -2,7 +2,11 @@ const btnVol = document.getElementById('btnVol');
 let stateVol = true;
 const btnPlayPause = document.getElementById('btnPlayPause');
 let statePlay = true;
+const mainVideo = document.getElementById('mainVideo');
 
+document.addEventListener('onchange', (e)=>{
+    console.log(e.target);
+});
 var tag = document.createElement('script');
 
     tag.src = "https://www.youtube.com/iframe_api";
@@ -20,7 +24,11 @@ var tag = document.createElement('script');
     }
 
     function onPlayerReady() {
-        player.playVideo();
+        if (window.screen.availWidth <= 900) {
+            player.pauseVideo();
+        } else {
+            player.playVideo();
+        }
     }
     btnVol.addEventListener('click', ()=>{
         const iconVol = document.querySelector('#btnVol i');
@@ -48,5 +56,13 @@ var tag = document.createElement('script');
             btnPause.removeAttribute('class');
             btnPause.setAttribute('class', 'fas fa-pause');
             statePlay=true;
+        }
+    });
+
+    $(window).resize(function() {
+        if (window.screen.availWidth <= 900) {
+            player.stopVideo();
+        } else {
+            player.playVideo();
         }
     });

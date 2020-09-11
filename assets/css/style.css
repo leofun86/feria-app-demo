@@ -1343,6 +1343,7 @@ section {
   width:100%;
   height:100%;
   scale:1.3;
+  display:block;
 }
 #mainVideoHorizontal, #mainVideoVertical {
   z-index:-2;
@@ -1406,6 +1407,9 @@ section {
     font-size:4vw;
   }
   #mainVideo {
-    scale:4;
+    display:none;
+  }
+  #btnPlayPause, #btnVol, #btnView {
+    display:none!important;
   }
 }
