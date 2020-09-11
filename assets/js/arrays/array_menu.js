@@ -48,6 +48,10 @@ const menuArray = [
             {
                 txt:'Historias de la feria',
                 href:'historias_feria.html',
+            },
+            {
+                txt:'Descargas',
+                href:'descargas.html',
             }
         ]
     },

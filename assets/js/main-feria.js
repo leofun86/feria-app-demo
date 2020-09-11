@@ -1,37 +1,66 @@
 const index_categorias = document.getElementById('index_categorias');
 const caja_slide = document.getElementById('slide-banner-feria');
 const caja_subcategorias = document.getElementById('modal_subcategorias');
-const caja_menu = document.getElementById('menu_feria');
+//const caja_menu = document.getElementById('menu_feria');
+const caja_menu_feria = document.getElementById('cajaMenuVer');
+const contenedor_paginas = document.getElementById('contenedor_paginas');
+const videoHorizontal = document.getElementById('mainVideoHorizontal');
+const videoVertical = document.getElementById('mainVideoVertical');
+const audioVideo = document.querySelector('#mainFeria audio');
+const btnPlayPause = document.getElementById('btnPlayPause');
+const btnVol = document.getElementById('btnVol');
+const btnMainOnOff = document.getElementById('btnView');
+const btnFullScreen = document.getElementById('btnFullScreen');
+let stateVideo = false;
+let volVideo = false;
+let stateView = false;
+const menuCaja1 = document.getElementById('menu-caja-1');
+const menuCaja2 = document.getElementById('menu-caja-2');
+const menuCaja3 = document.getElementById('menu-caja-3');
+
+/*caja_menu_feria.addEventListener('click', (e)=>{
+    e.preventDefault();
+    console.log(e.target);
+    if (e.target.tagName === "A") {
+        contenedor_paginas.innerHTML='';
+        $(contenedor_paginas).load(e.target.href);
+    }
+    console.log(e.target.textContent.toLowerCase() === 'inicio')
+});*/
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    cargaMenu();
+    //cargaMenu();
     //cargaSlide();
-    cargaCategorias();
+    //cargaCategorias();
+    videoPlay();
 })
 
 // MENU
-function cargaMenu() {
+
+/*function cargaMenu() {
     const fragment = document.createDocumentFragment();
     const nav = document.createElement('nav');
-    const h1 = document.createElement('h1');
-    const span = document.createElement('span');
-    const txt = document.createElement('span');
+    const btnMenu = document.createElement('i');
+    const logo = document.createElement('img');
+    const iconUser = document.createElement('i');
     const a = document.createElement('a');
-    const i = document.createElement('i');
-    caja_menu.setAttribute('style', 'padding-bottom:2vw;');
-    nav.setAttribute('class', 'nav-menu d-none d-lg-block');
-    h1.setAttribute('class', 'logo mr-auto');
-    i.setAttribute('class', 'fas fa-store-alt');
-    txt.setAttribute('style', 'color:black!important;');
-    txt.textContent='Feria Tristán';
-    a.setAttribute('href', 'index.html');
-    span.setAttribute('style', 'font-size: 0.8rem;position:relative;top:14px;right:65px;');
-    span.textContent='150 años';
-    a.appendChild(i);
-    a.appendChild(txt);
-    a.appendChild(span);
-    h1.appendChild(a);
     const ul1 = document.createElement('ul');
+    caja_menu.setAttribute('class', 'col-12 d-flex align-items-center py-3');
+    nav.setAttribute('class', 'nav-menu d-none');
+    nav.setAttribute('style', 'border:1px solid red;height:100%;');
+    btnMenu.setAttribute('class', 'fas fa-bars mr-3');
+    btnMenu.setAttribute('style', 'font-size:4vw;;cursor:pointer;');
+    btnMenu.setAttribute('id', 'btnMenuVer');
+    logo.setAttribute('src', './assets/img/logo_feria.png');
+    logo.setAttribute('class', 'img-fluid');
+    logo.setAttribute('style', 'width:18vw;');
+    iconUser.setAttribute('class', 'fas fa-user-circle');
+    iconUser.setAttribute('style', 'font-size:3vw;position:absolute;right:2vw;color:#e76668;');
+    a.setAttribute('href', 'index.html');
+    a.appendChild(logo);
+    fragment.appendChild(btnMenu);
+    fragment.appendChild(a);
+    fragment.appendChild(iconUser);
     menuArray.map(item=>{
         if (item.subs) {
             const li1 = document.createElement('li');
@@ -90,13 +119,14 @@ function cargaMenu() {
             ul1.appendChild(li);
         }
     });
-    fragment.appendChild(h1);
     nav.appendChild(ul1);
     fragment.appendChild(nav);
     caja_menu.appendChild(fragment);
-}
+}*/
+
 
 // SLIDE
+/*
 function cargaSlide() {
     const fragment = document.createDocumentFragment();
     // HEADER
@@ -180,8 +210,10 @@ function cargaSlide() {
     fragment.appendChild(next);
     caja_slide.appendChild(fragment);
 };
+*/
 
 // CATEGORÍAS
+
 function cargaCategorias() {
     const fragment = document.createDocumentFragment();
     categoriasArray.map(cate=>{
@@ -308,10 +340,121 @@ function modalSubcategorias(categoria) {
     }
 }
 
+
 $(function(){
 	$('.toggle').click(function(e){
 		e.preventDefault();
 		$(this).closest('.category').siblings().removeClass('active');
 		$(this).closest('.category').toggleClass('active');
 	});
+    $('#btnMenuVer').click(function() {
+        $('#cajaMenuVer').slideToggle();
+    });
 });
+
+function videoPlay () {
+    videoHorizontal.play();
+    videoHorizontal.loop=true;
+    videoVertical.play();
+    videoVertical.loop=true;
+    audioVideo.play();
+    audioVideo.loop=true;
+    const btnPause = document.querySelector('#btnPlayPause i');
+    const iconVol = document.querySelector('#btnVol i');
+    const iconView = document.querySelector('#btnView i');
+    btnPlayPause.addEventListener('click', ()=>{
+        if(!stateVideo) {
+            videoVertical.pause();
+            videoHorizontal.pause();
+            audioVideo.pause();
+            document.querySelector
+            btnPause.removeAttribute('class');
+            btnPause.setAttribute('class', 'fas fa-play');
+            stateVideo = true;
+        } else {
+            videoVertical.play();
+            videoHorizontal.play();
+            audioVideo.play();
+            btnPause.removeAttribute('class');
+            btnPause.setAttribute('class', 'fas fa-pause');
+            stateVideo=false;
+        }
+    });
+    btnVol.addEventListener('click', ()=>{
+        if (!volVideo) {
+            iconVol.removeAttribute('class');
+            iconVol.setAttribute('class', 'fas fa-volume-mute');
+            audioVideo.muted=true;
+            volVideo=true;
+        } else {
+            audioVideo.muted=false;
+            iconVol.removeAttribute('class');
+            iconVol.setAttribute('class', 'fas fa-volume-up');
+            volVideo=false;
+        }
+    });
+    btnMainOnOff.addEventListener('click', (e)=>{
+        const h1 = document.querySelector('#mainFeria h1');
+		const h2 = document.querySelector('#mainFeria h2');
+		const logo1 = document.querySelector('#mainFeria img');
+        const a = document.querySelector('#mainFeria a');
+        const div = document.querySelector('#mainFeria > div');
+        if (!stateView) {
+            $(h1).fadeToggle();
+			$(h2).fadeToggle();
+			$(logo1).fadeToggle();
+            $(a).fadeToggle();
+            $(div).fadeToggle();
+            iconView.removeAttribute('class');
+            iconView.setAttribute('class', 'fas fa-eye-slash');
+            stateView=true;
+        } else {
+            $(h1).fadeToggle();
+			$(h2).fadeToggle();
+            $(logo1).fadeToggle();
+			$(a).fadeToggle();
+            $(div).fadeToggle();
+            iconView.removeAttribute('class');
+            iconView.setAttribute('class', 'fas fa-eye');
+            stateView=false;
+        }        
+    });
+    btnFullScreen.addEventListener('click', ()=>{
+        if (videoHorizontal.requestFullscreen) {
+            videoHorizontal.requestFullscreen();
+            videoHorizontal.controls=true;
+        }
+    });
+}
+
+/*menuCaja1.addEventListener('mouseenter', ()=>{
+    console.log('atroden');
+    const videoCaja1 = document.querySelector('#menu-caja-1 video');
+    videoCaja1.play();
+});
+menuCaja1.addEventListener('mouseleave', ()=>{
+    console.log('arafue');
+    const videoCaja1 = document.querySelector('#menu-caja-1 video');
+    videoCaja1.pause();
+});
+menuCaja2.addEventListener('mouseenter', ()=>{
+    console.log('atroden');
+    const videoCaja2 = document.querySelector('#menu-caja-2 video');
+    videoCaja2.play();
+});
+menuCaja2.addEventListener('mouseleave', ()=>{
+    console.log('arafue');
+    const videoCaja2 = document.querySelector('#menu-caja-2 video');
+    videoCaja2.pause();
+});
+menuCaja3.addEventListener('mouseenter', ()=>{
+    console.log('atroden');
+    const videoCaja1 = document.querySelector('#menu-caja-3 video');
+    videoCaja1.play();
+});
+menuCaja3.addEventListener('mouseleave', ()=>{
+    console.log('arafue');
+    const videoCaja3 = document.querySelector('#menu-caja-3 video');
+    videoCaja3.pause();
+});*/
+

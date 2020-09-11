@@ -1,14 +1,23 @@
+
+@font-face {
+  font-family: 'atlantic_cruise';
+  src: url('./../fonts/Atlantic_Cruise.ttf');
+}
+
+body, html { width:100%;height:100%; }
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
 
 a {
-  color: #e03a3c;
+  /*color: #e03a3c;*/
+  color:#fff;
 }
 
 a:hover {
-  color: #e76668;
+  /*color: #e76668;*/
+  color:#eee;
   text-decoration: none;
 }
 
@@ -61,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   transition: all 0.5s;
   z-index: 997;
-  padding: 20px 0;
+  /*padding: 20px 0;*/
 }
 
 #header.header-scrolled {
@@ -1140,6 +1149,40 @@ section {
   line-height: 1.8rem;
 }
 
+/* MENU */
+.navbar-toggler {
+  color:rgba(0, 0, 0, 1);
+  border-color:none!important;
+}
+#cajaMenuVer h4 {
+  font-family:'arial'!important;
+}
+.titulo-caja-menu {
+  background-color:rgba(0,0,0,0.3);
+  font-family:'atlantic_cruise'!important;
+  font-size:2rem;
+}
+#cajaMenuVer h6, #cajaMenuVer li {
+  position:relative;
+  left:0px;
+  transition:0.3s;
+  line-height:1rem;
+}
+#cajaMenuVer h6::before, #cajaMenuVer li::before {
+  content:'■';
+  font-size:1.6rem;
+  margin-right:5px;
+  cursor:pointer;
+  color:rgba(255, 255, 255, 0.5);
+}
+#cajaMenuVer h6:hover, #cajaMenuVer li:hover {
+  left:4px;
+}
+#cajaMenuVer ul {
+  padding-left:0px;
+  list-style:none;
+}
+
 /* NANO MENU */
 .toggle {
   background: #e03a3c!important;
@@ -1244,3 +1287,100 @@ section {
 .category.active .links-wrap .links a:nth-child(1){transform:translate(-40px,-50px) scale(1) rotate(0deg)}
 .category.active .links-wrap .links a:nth-child(2){transform:translate(-70px,0px) scale(1) rotate(0deg)}
 .category.active .links-wrap .links a:nth-child(3){transform:translate(-40px,55px) scale(1) rotate(0deg)}
+
+/* MAIN SECTION */
+#mainFeria {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  height:100%!important;
+  background-image:url('./assets/img/banner/banner_1.jpg');
+  background-size:cover;
+}
+#mainFeria > div {
+  z-index:-1;
+  position:absolute;
+  background:rgba(129, 117, 117, 0.2);
+  width:100%;
+  height:100%;
+}
+#mainFeria h1 {
+  font-size:6vw;
+  color:rgba(255, 255, 255,0.8);
+  font-weight: 999;
+}
+#mainFeria h2 {
+  font-size:3vw;
+  color:rgba(255, 255, 255,0.8);
+  font-weight: 999;
+}
+#mainFeria img {
+  width:22vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  padding:1vw 1vw 2vw 1vw;
+  border-radius:3vw 3vw 0px 0px;
+}
+#mainVideoHorizontal, #mainVideoVertical {
+  z-index:-2;
+  position:absolute;
+  width:100%;
+}
+#mainVideoHorizontal { scale:1.2; }
+#mainVideoVertical { scale:1.4; }
+#controlsLeft{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:auto!important;
+  height:auto!important;
+  display:inline!important;
+  z-index:-1;
+}
+#controlsLeft button {
+  background:none;
+  color:white;
+  border:none;
+  font-size:2vw;
+  outline:none;
+}
+#menu-caja-1, #menu-caja-2, #menu-caja-3 {
+  overflow:hidden;
+}
+#menu-caja-1 video, #menu-caja-2 video, #menu-caja-3 video {
+  z-index:-1;
+  position: absolute;
+  top: 10%; 
+  left: 10%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto; 
+  height: auto;
+  scale:0.6;
+}
+
+/*
+#menu-caja-1 {
+  background-image:url('./../img/menu/menu_links_principales.jpg');background-size:cover;
+}
+#menu-caja-2 {
+  background-image:url('./../img/menu/menu_paseo_feria.jpg');background-size:cover;
+}
+#menu-caja-3 {
+  background-image:url('./../img/menu/menu_wiki_feria.jpg');background-size:cover;
+}
+*/
+
+@media screen and (max-width:900px) {
+  #controlsLeft button {
+    font-size:5vw;
+  }
+  #mainFeria img {
+    width:40vw;
+  }
+  #mainFeria h2 {
+    font-size:4vw;
+  }
+}

@@ -1,0 +1,105 @@
+.nano{position:relative;width:100%;height:100%;overflow:hidden}.nano>.nano-content,.nano>.nano-pane{position:absolute;right:0;top:0;bottom:0}.nano>.nano-content{overflow:scroll;overflow-x:hidden;left:0}.nano>.nano-content:focus{outline:dotted thin}.nano>.nano-content::-webkit-scrollbar{display:none}.has-scrollbar>.nano-content::-webkit-scrollbar{display:block}.nano>.nano-pane{background:rgba(0,0,0,.25);width:10px;visibility:hidden\9;opacity:.01;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;transition:.2s;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.nano>.nano-pane>.nano-slider{background:#444;background:rgba(0,0,0,.5);position:relative;margin:0 1px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}.nano-pane.active,.nano-pane.flashed,.nano:hover>.nano-pane{visibility:visible\9;opacity:.99}
+
+.mhn-news-app{
+	height:100%;
+	width:100%;
+	max-width:370px;
+	max-height:565px;
+	overflow:hidden;
+	position:fixed;
+	left:50%;
+	margin-left:-185px;
+}
+.category{
+	height:200px;
+	width:inherit;
+	overflow:hidden;
+	background:teal;
+	padding:40px 30px;
+	position:relative;
+}
+.category:nth-child(1){background:#f64c73}
+
+.category .statistic-wrap,
+.category .statistic-wrap .head{
+	text-align:center;
+}
+.category .links-wrap{
+	top:50%;
+	width:200px;
+	height:200px;
+	right:-100px;
+	border-radius:50%;
+	position:absolute;
+	margin-top:-100px;
+}
+.category .links-wrap .toggle{
+	top:50%;
+	z-index:2;
+	color:#eee;
+	right:100px;
+	width:25px;
+	height:50px;
+	cursor:pointer;
+	font-size:24px;
+	padding-left:4px;
+	text-align:center;
+	position:inherit;
+	margin-top:-25px;
+	line-height:50px;
+	background:rgba(0,0,0,.4);
+	border-radius:50px 0 0 50px;
+}
+.category .links-wrap .toggle .fa:before{content:'\f104'}
+.category.active .links-wrap .toggle .fa:before{content:'\f105'}
+
+.category .links-wrap .links{
+	left:0;
+	width:inherit;
+	height:inherit;
+	position:inherit;
+	border-radius:inherit;
+	transition:all .4s ease-in-out 0s;
+}
+.category .links-wrap .links:before,
+.category .links-wrap .links:after{
+	width:100px;
+	height:100px;
+	transition:inherit;
+	background:rgba(0,0,0,.2);
+}
+.category .links-wrap .links:before{
+	top:-100px;
+	border-radius:100px 0 0 0;
+}
+.category .links-wrap .links:after{
+	bottom:-100px;
+	border-radius:0 0 0 100px;
+}
+.category.active .links-wrap .links:before{top:0}
+.category.active .links-wrap .links:after{bottom:0}
+
+.category .links a{
+	top:50%;
+	z-index:1;
+	right:55px;
+	width:42px;
+	height:42px;
+	color:rgba(0,0,0,.5);
+	margin-top:-21px;
+	line-height:42px;
+	text-align:center;
+	border-radius:50%;
+	background:white;
+	position:absolute;
+	display:inline-block;
+	transform:translate(0,0) scale(0) rotate(360deg);
+	transition:all .4s ease-in-out 0s;
+}
+.category.active .links a{right:80px}
+.category.active .links-wrap .links a:nth-child(1){transform:translate(-30px,-50px) scale(1) rotate(0deg)}
+.category.active .links-wrap .links a:nth-child(2){transform:translate(-60px,0px) scale(1) rotate(0deg)}
+.category.active .links-wrap .links a:nth-child(3){transform:translate(-30px,50px) scale(1) rotate(0deg)}
+
+.nano{height:515px}
+.nano-pane{visibility:hidden}
